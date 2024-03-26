@@ -201,9 +201,7 @@ UsuarioDAO dao = new UsuarioDAO();
     }// </editor-fold>//GEN-END:initComponents
 
     private void imgLogoComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_imgLogoComponentAdded
-        ImageIcon icon = new ImageIcon("src/imgs/IAGON-Photoroom.png-Photoroom.png");
-        icon.setImage(icon.getImage().getScaledInstance(imgLogo.getWidth(), imgLogo.getHeight(), 1));
-        imgLogo.setIcon(icon);
+        
     }//GEN-LAST:event_imgLogoComponentAdded
 
     private void buttonRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonRegisterMouseClicked
@@ -220,7 +218,9 @@ UsuarioDAO dao = new UsuarioDAO();
         String senha = new String(senhaa);
         if (dao.login(login, senha)) {
             JOptionPane.showConfirmDialog(rootPane, "Login bem sucedido", "Login", DEFAULT_OPTION, PLAIN_MESSAGE);
-
+            TelaInicio inicio = new TelaInicio();
+            inicio.setVisible(true); 
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos!");
         }
